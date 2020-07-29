@@ -25,7 +25,7 @@ Xsampler(
 )
 }
 \arguments{
-\item{y}{Vector of oberved count data.}
+\item{y}{Vector of observed count data.}
 
 \item{A}{Model configuration matrix, assumed to be binary.}
 
