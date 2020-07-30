@@ -1,7 +1,7 @@
 #' Z-polytope sampler for linear inverse problems
 #'
 #' For the linear inverse problem y=Ax where y and x are counts, the y-fibre (solution set) is a Z-polytope (i.e. the points on the integer lattice within a convex polytope). This function implements samplers for the Z-polytope, with using a dynamic lattice basis or a full Markov basis. The underyling model for x can be Poisson, uniform or negative binomial.
-#' @param y Vector of oberved count data.
+#' @param y Vector of observed count data.
 #' @param A Model configuration matrix, assumed to be binary.
 #' @param lambda Mean vector for x.
 #' @param U Optional matrix the columns of which should be a Markov (sub)-basis.
@@ -14,16 +14,18 @@
 #' @param Model "Poisson", "Uniform", "NegBin" or "Normal" (the last being a discrete approximation).
 #' @param Proposal "NonUnif" or "Unif" (default).
 #' @param NB.alpha Dispersion parameter for negaqtive-binomial distribution. Defaults to 1.
-#' @param ndraws Number of iterations to run sampler after burn-in. One iteration comprises cycling through the full basis (possibly augmented by a combined move). Defaults to 10^5.
-#' @param burnin Number of iteractions for burn in period. Defaults to 20000, which is usually more than adequate.
+#' @param ndraws Number of iterations to run sampler after burn-in. One iteration comprises cycling through the full basis (possibly augmented by a combined move). Defaults to 10^4.
+#' @param burnin Number of iteractions for burn in period. Defaults to 2000, which is usually more than adequate.
 #' @param verbose Controls level of detail in recording lattice bases used.
 #' @param THIN Thinning parameter for output. Defaults to 1 (no thinning).
 #' @return A list with components X (a matrix, each row corresponding to samplers for an entry of x) and x.order (a vector describing dynamic selection of lattice bases, if verbose=1).
+#' @export
 #' @examples 
 
-Xsampler <- function (y, A, lambda, U=NULL, Method="MH", Reorder=TRUE, tune.par=0.5, combine=FALSE, x.order=NULL, x.ini=NULL, Model="Poisson", Proposal="Unif", NB.alpha=1, ndraws = 100000, burnin = 20000, verbose = 0, THIN = 1) {
+Xsampler <- function (y, A, lambda, U=NULL, Method="MH", Reorder=TRUE, tune.par=0.5, combine=FALSE, x.order=NULL, x.ini=NULL, Model="Poisson", Proposal="Unif", NB.alpha=1, ndraws = 10000, burnin = 2000, verbose = 0, THIN = 1) {
 	require(lpSolve)
 	require(numbers)
+	require(extraDistr)
   	if(Model=="NegBin" & NB.alpha<=0) NB.alpha=1
 	if(Model=="Uniform") Method <- "Gibbs"
 	y <- as.numeric(y)
