@@ -55,7 +55,10 @@ Xsampler <- function (y, A, lambda, U=NULL, Method="MH", Reorder=TRUE, tune.par=
 
 	lambda <- lambda[x.order]
 	
-	if (is.matrix(U)) dA1 <- 1
+	if (is.matrix(U)){
+	 	dA1 <- 1
+		tune.par <- -1
+	}
 	if (!is.matrix(U)){
 		A1 <- A[,1:n]
 		dA1 <- det(A1)
