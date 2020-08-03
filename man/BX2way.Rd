@@ -18,6 +18,6 @@ to the vectors in full Markov basis for the resampling problem).
 }
 \examples{
 data(BX2way)
-Xsampler(A=BX2way$A,y=BX2way$y,lambda=BX2way$lambda,Model="Uniform",Method="Gibbs",tune.par=0.5,combine=FALSE)
+Xsampler(A=BX2way$A,y=BX2way$y,lambda=BX2way$lambda,Model="Uniform",Method="Gibbs",tune.par=0.5,combine=FALSE,burnin=50,ndraws=200)
 }
 \keyword{datasets}

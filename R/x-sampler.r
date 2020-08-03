@@ -138,11 +138,11 @@ Xsampler <- function (y, A, lambda, U=NULL, Method="MH", Reorder=TRUE, tune.par=
 					}
 					if (Proposal=="Unif") acc.prob <- exp(L.cand - L)
 					if (Proposal=="NonUnif"){
-	            			if (Model=="Poisson"){
+	            				if (Model=="Poisson"){
 							q.can <- dpois(x.cand[n+j],lambda[n+j],log=T)  
 							q.cur <- dpois(x[n+j],lambda[n+j],log=T)
 						}
-	            			if (Model=="NegBin"){
+	            				if (Model=="NegBin"){
 							q.can <- dnbinom(x.cand[n+j],mu=lambda[n+j],size=lambda[n+j]/NB.alpha,log=T)  
 							q.cur <- dnbinom(x[n+j],mu=lambda[n+j],size=lambda[n+j]/NB.alpha,log=T)
 						}

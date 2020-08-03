@@ -18,8 +18,8 @@ Xsampler(
   Model = "Poisson",
   Proposal = "Unif",
   NB.alpha = 1,
-  ndraws = 1e+05,
-  burnin = 20000,
+  ndraws = 10000,
+  burnin = 2000,
   verbose = 0,
   THIN = 1
 )
@@ -51,9 +51,9 @@ Xsampler(
 
 \item{NB.alpha}{Dispersion parameter for negaqtive-binomial distribution. Defaults to 1.}
 
-\item{ndraws}{Number of iterations to run sampler after burn-in. One iteration comprises cycling through the full basis (possibly augmented by a combined move). Defaults to 10^5.}
+\item{ndraws}{Number of iterations to run sampler after burn-in. One iteration comprises cycling through the full basis (possibly augmented by a combined move). Defaults to 10^4.}
 
-\item{burnin}{Number of iteractions for burn in period. Defaults to 20000, which is usually more than adequate.}
+\item{burnin}{Number of iteractions for burn in period. Defaults to 2000, which is usually more than adequate.}
 
 \item{verbose}{Controls level of detail in recording lattice bases used.}
 

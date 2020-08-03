@@ -8,12 +8,11 @@ Authors@R:
            email = "martin.hazelton@otago.ac.nz",
            comment = c(ORCID = "0000-0001-7831-725X"))
 Description: Dynamic lattice bases for Z-polytope sampling.
-License: `use_mit_license()`
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: 
     R (>= 2.10)
-
-
