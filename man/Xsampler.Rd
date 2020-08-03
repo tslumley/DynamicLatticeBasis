@@ -65,3 +65,7 @@ A list with components X (a matrix, each row corresponding to samplers for an en
 \description{
 For the linear inverse problem y=Ax where y and x are counts, the y-fibre (solution set) is a Z-polytope (i.e. the points on the integer lattice within a convex polytope). This function implements samplers for the Z-polytope, with using a dynamic lattice basis or a full Markov basis. The underyling model for x can be Poisson, uniform or negative binomial.
 }
+\examples{
+data(LondonRoad)
+Xsampler(A=LondonRoad$A,y=LondonRoad$y,lambda=LondonRoad$lambda,Model="Poisson",Method="Gibbs",tune.par=0.5,combine=FALSE)
+}

@@ -21,6 +21,8 @@
 #' @return A list with components X (a matrix, each row corresponding to samplers for an entry of x) and x.order (a vector describing dynamic selection of lattice bases, if verbose=1).
 #' @export
 #' @examples 
+#' data(LondonRoad)
+#' Xsampler(A=LondonRoad$A,y=LondonRoad$y,lambda=LondonRoad$lambda,Model="Poisson",Method="Gibbs",tune.par=0.5,combine=FALSE)
 
 Xsampler <- function (y, A, lambda, U=NULL, Method="MH", Reorder=TRUE, tune.par=0.5, combine=FALSE, x.order=NULL, x.ini=NULL, Model="Poisson", Proposal="Unif", NB.alpha=1, ndraws = 10000, burnin = 2000, verbose = 0, THIN = 1) {
 	require(lpSolve)
