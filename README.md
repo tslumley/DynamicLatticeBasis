@@ -1,6 +1,6 @@
 # DynamicLatticeBasis
 
-DynamicLatticeBasis is an R package for implementing dynamic lattice basis sampling from linear inverse problems. The methodology is described in Hazelton, McVeagh and van Brunt (2020).
+DynamicLatticeBasis is an R package for implementing dynamic lattice basis sampling for statistical linear inverse problems. The methodology is described in Hazelton, McVeagh and van Brunt (2020).
 
 ## Install
 
