@@ -2,7 +2,7 @@
 
 DynamicLatticeBasis is an R package for implementing dynamic lattice basis sampling for statistical linear inverse problems. The methodology is described in:
 
-Hazelton, M.L., McVeagh, M.R. and van Brunt, B. (2020). Geometrically aware dynamic Markov bases for statisital linear inverse problems, *Biometrika*, in revision.
+Hazelton, M.L., McVeagh, M.R. and van Brunt, B. (2020). Geometrically aware dynamic Markov bases for statistical linear inverse problems, *Biometrika*, in press. https://doi.org/10.1093/biomet/asaa083
 
 ## Install
 
@@ -627,5 +627,5 @@ plot(book.2way.MB.uniform$X[45,seq(1,ndraws,by=10)],type="l",ylab=expression(x[4
 
 ## Reference
 
-Hazelton, M.L., McVeagh, M.R. and van Brunt, B. (2020). Geometrically aware dynamic Markov bases for statisital linear inverse problems, *Biometrika*, in revision.
+Hazelton, M.L., McVeagh, M.R. and van Brunt, B. (2020). Geometrically aware dynamic Markov bases for statistical linear inverse problems, *Biometrika*, in press. https://doi.org/10.1093/biomet/asaa083
 
