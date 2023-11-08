@@ -10,18 +10,18 @@
 #' effectiveSize(res$X)
 
 effectiveSize <- function (x) {
-  require(coda)
-  if (is.mcmc.list(x)) {
+  if (coda::is.mcmc.list(x)) {
     ess <- do.call("rbind", lapply(x, effectiveSize))
     ans <- apply(ess, 2, sum)
   }
   else {
-    x <- as.mcmc(x)
+    x <- coda::as.mcmc(x)
     x <- as.matrix(x)
     variances <- apply(x, 2, var)
     indx <- variances > 0
+    indx[is.na(indx)]<-FALSE
     spec <- numeric(ncol(x))
-    if (sum(indx) >0 ) spec[indx] <- spectrum0.ar(x[,indx])$spec
+    if (sum(indx) >0 ) spec[indx] <- coda::spectrum0.ar(x[,indx])$spec
     ans <- ifelse(spec==0, 0, nrow(x) * variances/spec)
   }
   return(ans)

@@ -1,6 +1,6 @@
 Package: DynamicLatticeBasis
 Title: Dynamic Lattice Bases for Z-Polytope Sampling
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Martin",
            family = "Hazelton",
@@ -8,8 +8,7 @@ Authors@R:
            email = "martin.hazelton@otago.ac.nz",
            comment = c(ORCID = "0000-0001-7831-725X"))
 Description: Dynamic lattice bases for Z-polytope sampling.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -18,6 +17,7 @@ Imports:
 	lpSolve,
 	numbers,
 	extraDistr,
-	gtools
+	gtools,
+	coda
 Depends: 
     R (>= 2.10)
